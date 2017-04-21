@@ -1,0 +1,17 @@
+[user]
+	name = Florent Vennetier (OpenIO)
+	email = florent@fridu.net
+[push]
+	default = simple
+[alias]
+	logd = log --pretty=fuller --decorate --graph
+
+[color "diff"]
+	old = 009
+	new = 010
+
+[color "status"]
+	added = 010
+	changed = 009
+	unmerged = 202
+	untracked = 130

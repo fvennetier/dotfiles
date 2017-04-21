@@ -1,0 +1,33 @@
+#!/bin/bash
+
+TAGS_FILE="$HOME/tags"
+TAGS_DIRS_FILE="$HOME/tags-dirs"
+if [ ! -f "$TAGS_DIRS_FILE" ]
+then
+	echo "No tags-dirs file"
+	exit 1
+fi
+
+KNOWN_DIRS=`cat ${TAGS_DIRS_FILE}`
+
+if [ -f "$TAGS_FILE" ]
+then
+	echo "Compressing previous tags file"
+	gzip -f $TAGS_FILE
+fi
+
+echo "Backing up previous tags-dirs file"
+mv "${TAGS_DIRS_FILE}" "${TAGS_DIRS_FILE}.old"
+
+for mydir in $KNOWN_DIRS
+do
+	cd $mydir
+	echo -n "$mydir: "
+	if [ -d .git -a -x .git/hooks/post-checkout ]
+	then
+		.git/hooks/post-checkout
+	else
+		echo "no post-checkout script, skipping"
+	fi
+	echo
+done

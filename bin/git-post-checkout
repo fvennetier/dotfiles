@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ -z "$NO_BUILD_TAGS" ]
+then
+	BUILD_DIR=${PWD/src/build}
+fi
+TAGS_FILE="$HOME/tags"
+CTAGS_OPTS="-f $TAGS_FILE --append=yes --c-kinds=+p --c++-kinds=+p --python-kinds=-i --fields=+S --extra=+qf --exclude=*/.tox/*"
+KNOWN_DIRS=`[ -f "${TAGS_FILE}-dirs" ] && cat ${TAGS_FILE}-dirs`
+
+if [ -n "$EXCLUDE" ]
+then
+	CTAGS_OPTS="$CTAGS_OPTS --exclude=$EXCLUDE"
+fi
+
+echo -n "Generating local tags..."
+ctags $CTAGS_OPTS -R $PWD
+ctags $CTAGS_OPTS --langmap=c:+.h -R $PWD
+KNOWN_DIRS="$KNOWN_DIRS\n$PWD"
+
+if [ -d "$BUILD_DIR" ]
+then
+	echo -ne "\b\b\b\b\b\b\b\b\b\b\b\b\btags from build directory..."
+	ctags $CTAGS_OPTS -R $BUILD_DIR
+	ctags $CTAGS_OPTS --langmap=c:+.h -R $BUILD_DIR
+	KNOWN_DIRS="$KNOWN_DIRS\n$BUILD_DIR"
+fi
+
+#echo "Generating cscope tags..."
+#cscope -bR -s ./
+
+echo -e "$KNOWN_DIRS" | sort | uniq > ${TAGS_FILE}-dirs
+
+echo " Done."

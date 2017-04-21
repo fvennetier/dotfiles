@@ -1,0 +1,8 @@
+-I.
+-I/home/fvennetier/build/public_git/oio-sds
+-I/home/fvennetier/build/public_git/oio-sds/metautils/lib
+-I/usr/include/glib-2.0
+-I/usr/include/json-c
+-I/usr/local/include
+-I/usr/include
+-posix-lib

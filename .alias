@@ -1,0 +1,3 @@
+alias pretty_json="python -m json.tool"
+#alias gvg="G_SLICE=always-malloc valgrind --leak-check=full --leak-resolution=high --trace-children=yes"
+source ~/bin/complete_sqlite3.sh
