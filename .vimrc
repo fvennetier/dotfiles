@@ -42,6 +42,13 @@ let g:syntastic_c_include_dirs = [
 let g:syntastic_sh_checkers=['sh', 'shellcheck', 'checkbashisms']
 let g:syntastic_go_checkers=['go', 'gofmt', 'govet']
 
+" let g:jedi#use_splits_not_buffers = "bottom"
+" let g:jedi#show_call_signatures = "2"
+
+" let g:NERDDefaultAlign = 'left'
+" let g:NERDSpaceDelims = 1
+" let g:NERDCompactSexyComs = 1
+
 let c_space_errors = 1
 "let OmniCpp_MayCompleteDot = 1
 

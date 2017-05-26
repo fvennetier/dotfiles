@@ -5,6 +5,8 @@
 	default = simple
 [alias]
 	logd = log --pretty=fuller --decorate --graph
+	mff = merge --ff-only
+	fa = fetch --all
 
 [color "diff"]
 	old = 009
