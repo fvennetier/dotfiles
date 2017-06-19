@@ -18,8 +18,8 @@
 TERM=xterm-256color
 
 HISTCONTROL=ignoreboth
-HISTSIZE=2000
-HISTFILESIZE=10000
+HISTSIZE=10000
+HISTFILESIZE=30000
 shopt -s histappend
 shopt -s checkwinsize
 
@@ -64,5 +64,14 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:/usr/sbin:/sbin:$GOPATH/bin
 
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=95:ln=32:bn=32:se=36"
+
+## Color man pages
+export LESS_TERMCAP_mb=$(printf "\e[1;31m")
+export LESS_TERMCAP_md=$(printf "\e[1;31m")
+export LESS_TERMCAP_me=$(printf "\e[0m")
+export LESS_TERMCAP_se=$(printf "\e[0m")
+export LESS_TERMCAP_so=$(printf "\e[1;44;33m")
+export LESS_TERMCAP_ue=$(printf "\e[0m")
+export LESS_TERMCAP_us=$(printf "\e[4;32;40m")
 
 ulimit -c unlimited
