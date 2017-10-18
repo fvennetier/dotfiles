@@ -55,6 +55,8 @@ let c_space_errors = 1
 execute pathogen#infect()
 
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+autocmd FileType python nnoremap <buffer> <F5> :exec '!python' shellescape(@%, 1)<cr>
+
 autocmd FileType java setlocal expandtab shiftwidth=4 softtabstop=4
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=2 expandtab fdm=marker makeprg=make\ -C\ ${PWD/src/build}
 "autocmd FileType cpp setlocal fdm=marker makeprg=make\ -C\ ${PWD/src/build}

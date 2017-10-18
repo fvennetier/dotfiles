@@ -156,6 +156,8 @@ good-names=i,j,k,v,ex,Run,_
 # Bad variable names which should always be refused, separated by a comma
 bad-names=foo,bar,baz,toto,tutu,tata
 
+include-naming-hint=yes
+
 # Regular expression which should only match functions or classes name which do
 # not require a docstring
 no-docstring-rgx=__.*__

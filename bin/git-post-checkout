@@ -16,7 +16,10 @@ fi
 echo -n "Generating local tags..."
 ctags $CTAGS_OPTS -R $PWD
 ctags $CTAGS_OPTS --langmap=c:+.h -R $PWD
-KNOWN_DIRS="$KNOWN_DIRS\n$PWD"
+if ! grep -q "$(basename "$PWD")" "${TAGS_FILE}-dirs"
+then
+	KNOWN_DIRS="$KNOWN_DIRS\n$PWD"
+fi
 
 if [ -d "$BUILD_DIR" ]
 then
