@@ -59,9 +59,11 @@ autocmd FileType python nnoremap <buffer> <F5> :exec '!python' shellescape(@%, 1
 
 autocmd FileType java setlocal expandtab shiftwidth=4 softtabstop=4
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=2 expandtab fdm=marker makeprg=make\ -C\ ${PWD/src/build}
+autocmd FileType cpp nnoremap <F5> :w <cr> :make <cr>
 "autocmd FileType cpp setlocal fdm=marker makeprg=make\ -C\ ${PWD/src/build}
 "autocmd FileType cpp setlocal omnifunc=omni#cpp#complete#Main
 autocmd FileType c setlocal makeprg=make\ -C\ ${PWD/src/build}
+autocmd FileType c nnoremap <F5> :w <cr> :make <cr>
 autocmd FileType cmake setlocal makeprg=make\ -C\ ${PWD/src/build}
 autocmd FileType proto setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType rst setlocal makeprg=tox
@@ -72,4 +74,5 @@ map <C-$> :exec("tjump ".expand("<cword>"))<CR>
 map <C-g> :exec("tjump ".expand("<cword>"))<CR>
 "map <C-g> :exec("tjump ".expand("<cword>"))<CR>
 
+" Load local .vimrc files
 set exrc

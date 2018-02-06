@@ -1,0 +1,13 @@
+dashboard -layout threads stack source
+dashboard -style syntax_highlighting 'paraiso-dark'
+dashboard stack -style limit 10
+dashboard stack -style arguments False
+dashboard source -style context 8
+
+define hookpost-up
+dashboard
+end
+
+define hookpost-down
+dashboard
+end

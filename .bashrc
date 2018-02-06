@@ -61,17 +61,30 @@ export OIO_NS=NS
 export OIO_ACCOUNT=myaccount
 export GOPATH=$HOME/src/go
 export GOBIN=$GOPATH/bin
-export PATH=$PATH:/usr/sbin:/sbin:$GOPATH/bin
+export PATH=$PATH:/usr/sbin:/sbin:$GOPATH/bin:$HOME/bin
 
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=95:ln=32:bn=32:se=36"
 
 ## Color man pages
-export LESS_TERMCAP_mb=$(printf "\e[1;31m")
-export LESS_TERMCAP_md=$(printf "\e[1;31m")
-export LESS_TERMCAP_me=$(printf "\e[0m")
-export LESS_TERMCAP_se=$(printf "\e[0m")
-export LESS_TERMCAP_so=$(printf "\e[1;44;33m")
-export LESS_TERMCAP_ue=$(printf "\e[0m")
-export LESS_TERMCAP_us=$(printf "\e[4;32;40m")
+#export LESS_TERMCAP_mb=$(printf "\e[1;31m")
+#export LESS_TERMCAP_blink=$(printf "\e[1;31m")
+#
+#export LESS_TERMCAP_md=$(tput bold; tput setaf 1)
+#export LESS_TERMCAP_bold=$(tput bold; tput setaf 1)
+#
+#export LESS_TERMCAP_me=$(tput sgr0)
+## export LESS_TERMCAP_sgr0=$(tput sgr0)
+#
+#export LESS_TERMCAP_se=$(tput sgr0)
+## export LESS_TERMCAP_rmso=$(tput rmso)
+#
+#export LESS_TERMCAP_so=$(printf "\e[1;44;33m")
+#export LESS_TERMCAP_smso=$(printf "\e[1;44;33m")
+#
+#export LESS_TERMCAP_ue=$(tput sgr0)
+#export LESS_TERMCAP_rmul=$(tput rmul)
+#
+#export LESS_TERMCAP_us=$(printf "\e[4;32;40m")
+#export LESS_TERMCAP_smul=$(printf "\e[4;32;40m")
 
 ulimit -c unlimited

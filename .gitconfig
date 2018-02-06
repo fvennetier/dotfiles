@@ -1,6 +1,7 @@
 [user]
 	name = Florent Vennetier (OpenIO)
 	email = florent@fridu.net
+	signingKey = "EDD618881C889B6E4DE592E76C159D40C9498FAF"
 [push]
 	default = simple
 [alias]
@@ -17,3 +18,5 @@
 	changed = 009
 	unmerged = 202
 	untracked = 130
+[gitreview]
+	username = fvennetier
