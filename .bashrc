@@ -15,13 +15,17 @@
 #export EDITOR=/usr/bin/vim
 #export EDITOR=/usr/bin/mcedit
 
+#TERM=xterm-88color
 TERM=xterm-256color
+#TERM=rxvt-unicode-256color
 
 HISTCONTROL=ignoreboth
-HISTSIZE=10000
-HISTFILESIZE=30000
+HISTSIZE=30000
+HISTFILESIZE=60000
 shopt -s histappend
+shopt -s dirspell
 shopt -s checkwinsize
+shopt -s cdspell
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -48,7 +52,10 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    if [ -z "$PS1" ]
+    then
+      export PS1='\[\e]0;${debian_chroot:+($debian_chroot)}\e[01;32m\]\[\u@\h\][\e[00m: \w\a\]'
+    fi
     ;;
 *)
     ;;
@@ -59,6 +66,8 @@ test -s ~/.functions && . ~/.functions || true
 
 export OIO_NS=NS
 export OIO_ACCOUNT=myaccount
+export OIO_USER=FVE_TEST
+export S3_ENDPOINT="http://127.0.0.1:5000/"
 export GOPATH=$HOME/src/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:/usr/sbin:/sbin:$GOPATH/bin:$HOME/bin
