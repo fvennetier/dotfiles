@@ -18,8 +18,8 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline#extensions#whitespace#mixed_indent_format = 'mixed[%s]'
 let g:airline#extensions#whitespace#mixed_indent_file_format = 'mixed-file[%s]'
 let g:airline#extensions#default#layout = [
-    \	[ 'a', 'b', 'c' ],
-    \	[ 'x', 'z', 'warning', 'error' ]
+	\	[ 'a', 'b', 'c' ],
+	\	[ 'x', 'z', 'warning', 'error' ]
 	\	]
 
 let g:syntastic_check_on_wq=0
@@ -67,6 +67,7 @@ autocmd FileType c nnoremap <F5> :w <cr> :make <cr>
 autocmd FileType cmake setlocal makeprg=make\ -C\ ${PWD/src/build}
 autocmd FileType proto setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType rst setlocal makeprg=tox
+autocmd FileType rnc setlocal shiftwidth=2 expandtab
 autocmd FileType sh setlocal shiftwidth=2 expandtab
 
 "nnoremap <c-g> <c-]>
