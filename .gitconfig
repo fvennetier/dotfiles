@@ -18,5 +18,12 @@
 	changed = 009
 	unmerged = 202
 	untracked = 130
+
+[color "branch"]
+	remote = 009
+
 [gitreview]
 	username = fvennetier
+
+[fetch]
+	prune = true
