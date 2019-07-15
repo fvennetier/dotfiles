@@ -8,6 +8,7 @@
 	logd = log --pretty=fuller --decorate --graph
 	mff = merge --ff-only
 	fa = fetch --all
+	ria = rebase -i --autosquash
 
 [color "diff"]
 	old = 009
