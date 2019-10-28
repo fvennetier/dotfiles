@@ -1,7 +1,7 @@
 [user]
-	name = Florent Vennetier (OpenIO)
-	email = florent@fridu.net
-	signingKey = "EDD618881C889B6E4DE592E76C159D40C9498FAF"
+	name = Florent Vennetier
+	email = florent@openio.io
+	signingKey = "411B8173FD5AB26697372931B82B03096AB48E8A"
 [push]
 	default = simple
 [alias]

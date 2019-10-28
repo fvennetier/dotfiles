@@ -6,3 +6,4 @@
 -I/usr/local/include
 -I/usr/include
 -posix-lib
+-preproc

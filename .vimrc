@@ -63,6 +63,7 @@ autocmd FileType cpp setlocal tabstop=4 shiftwidth=2 expandtab fdm=marker makepr
 autocmd FileType cpp nnoremap <F5> :w <cr> :make <cr>
 "autocmd FileType cpp setlocal fdm=marker makeprg=make\ -C\ ${PWD/src/build}
 "autocmd FileType cpp setlocal omnifunc=omni#cpp#complete#Main
+autocmd FileType c setlocal noexpandtab shiftwidth=4
 autocmd FileType c setlocal makeprg=make\ -C\ ${PWD/src/build}
 autocmd FileType c nnoremap <F5> :w <cr> :make <cr>
 autocmd FileType cmake setlocal makeprg=make\ -C\ ${PWD/src/build}
