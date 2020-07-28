@@ -67,6 +67,7 @@ autocmd FileType c setlocal noexpandtab shiftwidth=4
 autocmd FileType c setlocal makeprg=make\ -C\ ${PWD/src/build}
 autocmd FileType c nnoremap <F5> :w <cr> :make <cr>
 autocmd FileType cmake setlocal makeprg=make\ -C\ ${PWD/src/build}
+autocmd FileType json setlocal expandtab shiftwidth=4 softtabstop=4
 autocmd FileType proto setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType rst setlocal makeprg=tox
 autocmd FileType rnc setlocal shiftwidth=2 expandtab

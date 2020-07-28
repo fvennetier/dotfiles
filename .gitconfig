@@ -5,9 +5,10 @@
 [push]
 	default = simple
 [alias]
+	fa = fetch --all
 	logd = log --pretty=fuller --decorate --graph
 	mff = merge --ff-only
-	fa = fetch --all
+	pushf = push --force-with-lease
 	ria = rebase -i --autosquash
 
 [color "diff"]
@@ -28,3 +29,6 @@
 
 [fetch]
 	prune = true
+
+[rerere]
+	enabled = true

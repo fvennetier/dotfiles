@@ -31,3 +31,9 @@ do
 	fi
 	echo
 done
+
+CTAGS_OPTS="-f $TAGS_FILE --c-kinds=+p --c++-kinds=+p --python-kinds=-i --fields=+S --extra=+qf --languages=-Vim"
+EXCLUDE="--exclude=oio*"
+SOURCE_PATHS="$HOME/virtualenv2/lib/python2.7 $HOME/virtualenv3/lib/python3.*"
+
+ctags $CTAGS_OPTS $EXCLUDE --append --langmap=c:+.h -R $SOURCE_PATHS
