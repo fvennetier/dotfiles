@@ -12,9 +12,10 @@ fi
 alias ll='ls -lF'
 alias la='ls -lAF'
 alias l='ls -CF'
+alias less='/usr/bin/less -i'
 alias :q='exit'
 
-
+alias jnal="journalctl -o short-precise"
 alias openyolo="openio --admin --dump-perfdata"
 alias pretty_json="python -m json.tool"
 #alias gvg="G_SLICE=always-malloc valgrind --leak-check=full --leak-resolution=high --trace-children=yes"

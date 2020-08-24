@@ -1,6 +1,6 @@
 [user]
 	name = Florent Vennetier
-	email = florent@openio.io
+	email = florent.vennetier@ovhcloud.com
 	signingKey = "411B8173FD5AB26697372931B82B03096AB48E8A"
 [push]
 	default = simple
@@ -32,3 +32,5 @@
 
 [rerere]
 	enabled = true
+[core]
+	editor = vim
