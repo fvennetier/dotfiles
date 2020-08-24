@@ -9,7 +9,12 @@ OPTS="$OPTS -Djute.maxbuffer=262144"
 
 CLS=org.apache.zookeeper.server.quorum.QuorumPeerMain
 
-. /usr/bin/zkEnv.sh
+if [ -n "$ZOOBINDIR" ]
+then
+  . $ZOOBINDIR/zkEnv.sh
+else
+  . /usr/bin/zkEnv.sh
+fi
 ZOO_LOG4J_PROP="INFO,ROLLINGFILE"
 export ZOO_LOG4J_PROP
 
