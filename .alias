@@ -12,7 +12,7 @@ fi
 alias ll='ls -lF'
 alias la='ls -lAF'
 alias l='ls -CF'
-alias less='/usr/bin/less -i'
+alias less='/usr/bin/less -i -+X -+F'
 alias :q='exit'
 
 alias jnal="journalctl -o short-precise"
@@ -21,5 +21,5 @@ alias pretty_json="python -m json.tool"
 #alias gvg="G_SLICE=always-malloc valgrind --leak-check=full --leak-resolution=high --trace-children=yes"
 source ~/bin/complete_sqlite3.sh
 
-alias venv2="source ~/virtualenv2/bin/activate"
-alias venv3="source ~/virtualenv3/bin/activate"
+alias venv2="source ~/venv2/bin/activate"
+alias venv3="source ~/venv3/bin/activate"

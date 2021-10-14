@@ -40,8 +40,9 @@ let g:syntastic_c_include_dirs = [
 	\	'/usr/include/zookeeper'
 \	]
 
-let g:syntastic_sh_checkers=['sh', 'shellcheck', 'checkbashisms']
 let g:syntastic_go_checkers=['go', 'gofmt', 'govet']
+let g:syntastic_sh_checkers=['sh', 'shellcheck', 'checkbashisms']
+let g:syntastic_python_checkers=['python', 'flake8', 'mypy', 'pylint']
 
 " let g:jedi#use_splits_not_buffers = "bottom"
 " let g:jedi#show_call_signatures = "2"

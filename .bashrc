@@ -80,6 +80,7 @@ export LD_LIBRARY_PATH=~/devroot/lib
 export OIO_ACCOUNT=myaccount
 export OIO_NS=NS
 export OIO_USER=FVE_TEST
+export PKG_CONFIG_PATH=~/devroot/lib/pkgconfig
 export PYTHONSTARTUP=~/.pythonrc
 export ZOOBINDIR=~/src/public_git/zookeeper/bin
 
@@ -110,3 +111,4 @@ if ! shopt -oq posix; then
   fi
 fi
 ulimit -c unlimited
+ulimit -n 4096

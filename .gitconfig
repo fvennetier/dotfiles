@@ -1,15 +1,19 @@
 [user]
 	name = Florent Vennetier
 	email = florent.vennetier@ovhcloud.com
-	signingKey = "411B8173FD5AB26697372931B82B03096AB48E8A"
+	# signingKey = "411B8173FD5AB26697372931B82B03096AB48E8A"
+	signingKey = "386D4CE167B1391F7088E56DCBB1ADE1769D449F"
 [push]
 	default = simple
 [alias]
+	changelog = log --oneline --no-decorate --reverse --no-merges --pretty='tformat:- %s (%h)'
 	fa = fetch --all
 	logd = log --pretty=fuller --decorate --graph
 	mff = merge --ff-only
 	pushf = push --force-with-lease
 	ria = rebase -i --autosquash
+	sp = stash push --keep-index
+	track = !cdsctl workflow status --track
 
 [color "diff"]
 	old = 009
@@ -34,3 +38,4 @@
 	enabled = true
 [core]
 	editor = vim
+	pager = /usr/bin/less -i -+X -+F

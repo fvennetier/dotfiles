@@ -77,7 +77,7 @@ find_process() {
   ZOOCFGDIR=$ZOOCFGROOT/${MYID}
   ZOOCFG=${ZOOCFGDIR}/zoo.cfg
 
-  ps -o pid,cmd -C java | grep "$ZOOCFG" | sed -r -e 's,[ ]+([0-9]+)[ ].*,\1,'
+  ps -o pid,cmd -C java | grep "$ZOOCFG" | sed -r -e 's,^[ ]*([0-9]+)[ ].*,\1,'
 }
 
 finish_cfg() {
