@@ -11,6 +11,26 @@ filetype indent plugin on
 
 " always display status line
 set laststatus=2
+let g:airline_mode_map = {
+	\ '__' : '------',
+	\ 'c'  : 'CMD',
+	\ 'i'  : 'INS',
+	\ 'ic' : 'INS COMP',
+	\ 'ix' : 'INS COMP',
+	\ 'multi' : 'MULT',
+	\ 'n'  : 'NORM',
+	\ 'ni' : '(INS)',
+	\ 'no' : 'OP PENDING',
+	\ 'R'  : 'RPL',
+	\ 'Rv' : 'V RPL',
+	\ 's'  : 'SEL',
+	\ 'S'  : 'S-LINE',
+	\ '' : 'S-BLOCK',
+	\ 't'  : 'TERM',
+	\ 'v'  : 'VIS',
+	\ 'V'  : 'V-LINE',
+	\ '' : 'V-BLOCK',
+	\ }
 let g:airline_section_z = '%#__accent_bold#%4l%#__restore__#%#__accent_bold#/%L%#__restore__#:%3v'
 let g:airline_skip_empty_sections = 1
 let g:airline_left_sep=''
@@ -23,6 +43,7 @@ let g:airline#extensions#default#layout = [
 	\	[ 'x', 'z', 'warning', 'error' ]
 	\	]
 
+let g:syntastic_aggregate_errors=1
 let g:syntastic_check_on_wq=0
 
 let g:syntastic_cpp_checkers=['gcc', 'cpplint']
@@ -41,8 +62,9 @@ let g:syntastic_c_include_dirs = [
 \	]
 
 let g:syntastic_go_checkers=['go', 'gofmt', 'govet']
-let g:syntastic_sh_checkers=['sh', 'shellcheck', 'checkbashisms']
+let g:syntastic_markdown_checkers=['proselint']
 let g:syntastic_python_checkers=['python', 'flake8', 'mypy', 'pylint']
+let g:syntastic_sh_checkers=['sh', 'shellcheck', 'checkbashisms']
 
 " let g:jedi#use_splits_not_buffers = "bottom"
 " let g:jedi#show_call_signatures = "2"
@@ -78,6 +100,8 @@ autocmd FileType sh setlocal shiftwidth=2 expandtab
 map <C-$> :exec("tjump ".expand("<cword>"))<CR>
 map <C-g> :exec("tjump ".expand("<cword>"))<CR>
 "map <C-g> :exec("tjump ".expand("<cword>"))<CR>
+
+command! Gblame Git blame
 
 " Load local .vimrc files
 set exrc
