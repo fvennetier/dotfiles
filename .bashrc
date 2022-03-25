@@ -76,7 +76,7 @@ test -s ~/.alias && . ~/.alias || true
 test -s ~/.functions && . ~/.functions || true
 
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=95:ln=32:bn=32:se=36"
-export LD_LIBRARY_PATH=~/devroot/lib
+export LD_LIBRARY_PATH=/home/fvenneti/devroot/lib:/home/fvenneti/devroot/usr/lib
 export OIO_ACCOUNT=myaccount
 export OIO_NS=NS
 export OIO_USER=FVE_TEST

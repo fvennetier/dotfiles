@@ -23,3 +23,8 @@ source ~/bin/complete_sqlite3.sh
 
 alias venv2="source ~/venv2/bin/activate"
 alias venv3="source ~/venv3/bin/activate"
+
+alias zdevpub='ssh pub-dev.bastions.ovh.net -t -- '
+alias zdevpub-a='ssh pub-dev-a.bastions.ovh.net -t -- '
+alias zdevpub-b='ssh pub-dev-b.bastions.ovh.net -t -- '
+alias zdevpub-c='ssh pub-dev-c.bastions.ovh.net -t -- '
