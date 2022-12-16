@@ -63,7 +63,7 @@ let g:syntastic_c_include_dirs = [
 
 let g:syntastic_go_checkers=['go', 'gofmt', 'govet']
 let g:syntastic_markdown_checkers=['proselint']
-let g:syntastic_python_checkers=['python', 'flake8', 'mypy', 'pylint']
+let g:syntastic_python_checkers=['python', 'flake8', 'pylint', 'mypy']
 let g:syntastic_sh_checkers=['sh', 'shellcheck', 'checkbashisms']
 
 " let g:jedi#use_splits_not_buffers = "bottom"
