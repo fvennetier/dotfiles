@@ -64,6 +64,7 @@ let g:syntastic_c_include_dirs = [
 let g:syntastic_go_checkers=['go', 'gofmt', 'govet']
 let g:syntastic_markdown_checkers=['proselint']
 let g:syntastic_python_checkers=['python', 'flake8', 'pylint', 'mypy']
+let g:syntastic_rust_checkers=['cargo', 'rustc']
 let g:syntastic_sh_checkers=['sh', 'shellcheck', 'checkbashisms']
 
 " let g:jedi#use_splits_not_buffers = "bottom"
@@ -90,6 +91,7 @@ autocmd FileType c setlocal noexpandtab shiftwidth=4
 autocmd FileType c setlocal makeprg=make\ -C\ ${PWD/src/build}
 autocmd FileType c nnoremap <F5> :w <cr> :make <cr>
 autocmd FileType cmake setlocal makeprg=make\ -C\ ${PWD/src/build}
+autocmd FileType conf setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType json setlocal expandtab shiftwidth=4 softtabstop=4
 autocmd FileType proto setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType rst setlocal makeprg=tox
@@ -102,6 +104,22 @@ map <C-g> :exec("tjump ".expand("<cword>"))<CR>
 "map <C-g> :exec("tjump ".expand("<cword>"))<CR>
 
 command! Gblame Git blame
+
+call plug#begin()
+Plug 'prabirshrestha/vim-lsp'
+call plug#end()
+
+if executable('rust-analyzer')
+  au User lsp_setup call lsp#register_server({
+        \   'name': 'Rust Language Server',
+        \   'cmd': {server_info->['rust-analyzer']},
+        \   'whitelist': ['rust'],
+        \ })
+endif
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_def_mapping_enabled=0
 
 " Load local .vimrc files
 set exrc

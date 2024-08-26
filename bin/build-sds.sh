@@ -9,12 +9,14 @@ debug_build () {
   export APACHE2_INCLUDE_DIRS=/usr/include/apache2
   export APACHE2_LIBRARY_DIRS=/usr/lib/apache2
 
+  # -DENBUG=1 \
   cmake \
     -DAPACHE2_LIBRARY_DIRS=/usr/lib/apache2 \
     -DAPACHE2_INCLUDE_DIRS=/usr/include/apache2 \
     -DAPACHE2_MODDIR=/home/fvenneti/devroot/lib/apache2/modules \
     -DCMAKE_INSTALL_PREFIX=/home/fvenneti/devroot \
     -DCMAKE_BUILD_TYPE=Debug \
+    -DCODECOV_OUTPUTFILE="$PWD/cmake_coverage.output" \
     -DENABLE_CODECOVERAGE=on \
     -DZK_INCDIR=/home/fvenneti/devroot/include/zookeeper \
     -DZK_LIBDIR=/home/fvenneti/devroot/lib \
@@ -24,7 +26,7 @@ debug_build () {
 }
 
 release_build () {
-  export CC=gcc-8
+  #export CC=gcc-8
   export APACHE2_INCLUDE_DIRS=/usr/include/apache2
   export APACHE2_LIBRARY_DIRS=/usr/lib/apache2
 

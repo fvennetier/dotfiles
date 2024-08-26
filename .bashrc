@@ -11,8 +11,8 @@ esac
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
-HISTSIZE=30000
-HISTFILESIZE=60000
+HISTSIZE=50000
+HISTFILESIZE=100000
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -75,11 +75,14 @@ esac
 test -s ~/.alias && . ~/.alias || true
 test -s ~/.functions && . ~/.functions || true
 
+export DEBUG_METRICS=1
+export GOPATH=/home/fvenneti/devroot/go
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=95:ln=32:bn=32:se=36"
 export LD_LIBRARY_PATH=/home/fvenneti/devroot/lib:/home/fvenneti/devroot/usr/lib
 export OIO_ACCOUNT=myaccount
 export OIO_NS=NS
 export OIO_USER=FVE_TEST
+export PCA_API_LOCAL_CONF_FILEPATH=/home/fvenneti/src/public_git/pca-api/local_conf.ini
 export PKG_CONFIG_PATH=~/devroot/lib/pkgconfig
 export PYTHONSTARTUP=~/.pythonrc
 export ZOOBINDIR=~/src/public_git/zookeeper/bin
@@ -112,3 +115,4 @@ if ! shopt -oq posix; then
 fi
 ulimit -c unlimited
 ulimit -n 4096
+. "$HOME/.cargo/env"

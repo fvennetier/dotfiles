@@ -5,7 +5,7 @@ then
 	BUILD_DIR=${PWD/src/build}
 fi
 TAGS_FILE="$HOME/tags"
-CTAGS_OPTS="-f $TAGS_FILE --append=yes --c-kinds=+p --c++-kinds=+p --python-kinds=-i --fields=+S --extra=+qf --exclude=*/.tox/*"
+CTAGS_OPTS="-f $TAGS_FILE --append=yes --c-kinds=+p --c++-kinds=+p --python-kinds=-i --fields=+S --extra=+qf --exclude=*/.tox/* --exclude=*/third_party/*"
 KNOWN_DIRS=`[ -f "${TAGS_FILE}-dirs" ] && cat ${TAGS_FILE}-dirs`
 
 if [ -n "$EXCLUDE" ]

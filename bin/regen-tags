@@ -34,6 +34,6 @@ done
 
 CTAGS_OPTS="-f $TAGS_FILE --c-kinds=+p --c++-kinds=+p --python-kinds=-i --fields=+S --extra=+qf --languages=-Vim"
 EXCLUDE="--exclude=oio*"
-SOURCE_PATHS="$HOME/venv2/lib/python2.7 $HOME/venv3/lib/python3.* /usr/include/glib-2.0 /usr/include/json-c"
+SOURCE_PATHS="$HOME/venv3/lib/python3.* /usr/include/glib-2.0 /usr/include/json-c"
 
 ctags $CTAGS_OPTS $EXCLUDE --append --langmap=c:+.h -R $SOURCE_PATHS

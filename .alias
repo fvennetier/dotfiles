@@ -15,7 +15,7 @@ alias l='ls -CF'
 alias less='/usr/bin/less -i -+X -+F'
 alias :q='exit'
 
-alias jnal="journalctl -o short-precise"
+alias jnal="journalctl -a -o short-precise"
 alias openyolo="openio --admin --dump-perfdata"
 alias pretty_json="python -m json.tool"
 #alias gvg="G_SLICE=always-malloc valgrind --leak-check=full --leak-resolution=high --trace-children=yes"
@@ -28,3 +28,5 @@ alias zdevpub='ssh pub-dev.bastions.ovh.net -t -- '
 alias zdevpub-a='ssh pub-dev-a.bastions.ovh.net -t -- '
 alias zdevpub-b='ssh pub-dev-b.bastions.ovh.net -t -- '
 alias zdevpub-c='ssh pub-dev-c.bastions.ovh.net -t -- '
+
+alias sm3='ssh fvenneti@sm3.ovh.net -t -o ServerAliveInterval=60 -- '

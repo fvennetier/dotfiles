@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function _sqlite3 ()
+_sqlite3 ()
 {
     local cur prev words cword;
     _init_completion || return;
@@ -19,4 +19,37 @@ function _sqlite3 ()
         return;
     fi;
     _filedir "$dbexts"
+}
+
+urldecode() {
+  : "${*//+/ }"; echo -e "${_//%/\\x}";
+}
+
+_z() {
+    host=$1
+    domain=$2
+    user=${3:-root}
+
+    if [[ "$host" =~ ^[0-9]{3,4}$ ]]; then
+        host="admin1.infra${host}.${domain}"
+    elif [[ "$host" =~ ^[0-9]+$ ]]; then
+        host="${host}.id.${domain}"
+    fi
+    zdevpub ${user}@${host#*@}
+}
+
+zroot() {
+    _z $1 pcs.cloud.ovh.net
+}
+
+zrootus() {
+    _z $1 pcs.cloud.ovh.us
+}
+
+zrun1() {
+    _z $1 pcs.cloud.ovh.net run1
+}
+
+zrun1us() {
+    _z $1 pcs.cloud.ovh.us run1
 }
