@@ -78,6 +78,7 @@ test -s ~/.functions && . ~/.functions || true
 export DEBUG_METRICS=1
 export GOPATH=/home/fvenneti/devroot/go
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=95:ln=32:bn=32:se=36"
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export LD_LIBRARY_PATH=/home/fvenneti/devroot/lib:/home/fvenneti/devroot/usr/lib
 export OIO_ACCOUNT=myaccount
 export OIO_NS=NS

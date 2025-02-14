@@ -1,7 +1,6 @@
 [user]
 	name = Florent Vennetier
 	email = florent.vennetier@ovhcloud.com
-	# signingKey = "411B8173FD5AB26697372931B82B03096AB48E8A"
 	signingKey = "386D4CE167B1391F7088E56DCBB1ADE1769D449F"
 [push]
 	default = simple
